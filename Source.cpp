@@ -5,7 +5,6 @@
 #include <string>
 #include <iomanip>
 #include <limits> // Для std::numeric_limits
-///using namespace std;
 #include <Windows.h>
 /*
    Типы данных
@@ -240,13 +239,44 @@
 		 */
 		 /// int choose = 0;
 		  ///double rub = 0, dollar = 83.61, euro = 
+/*void Print
+double Sum(double first, double second)
+{
+		return first + second;
+}
+int Sum(int first, int second)
+{
+	return first + second;
+}
+*/
+/*template<typename Type, typename Povar>
+int Sum(Type a, Povar b)
+{
+	Type asd;
+	return a + b;
+}
 
+int Fak(int n)
+{
+	if (n < 0)
+	{
+		return 0;
+	}
+	if (n == 0)
+	{
+		return 1;
+	}
+	else
+	{
+		return n * Fak(n - 1);
+	}
+}
+*/
 
 int main()
 {
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
-
 	srand(time(NULL));
 	/*int a;
 	a = rand() % 10 + 1;
@@ -327,18 +357,9 @@ int main()
 	///int l = 0;
 	//while (l < 5)
 	//{
-
 	//	l++;
-
-
-
 	//}
-
-
-
-
-
-
+/*
 	const int s = 5;
 	int ivan[s]{};
 
@@ -352,7 +373,22 @@ int main()
 		if (ivan[i] > )
 
 	}
+*/
+	//std::pow()
+	//std::cout << Sum(3, 4.4) << Sum(3.5, 3.7) << Sum("asd", "gdfsfdg") << Sum(true, false);
+	//std::cout << Sum(3, 4.4) << Sum("asd",234);
+	//std::cout << Fak(5);
+	int Ummo(int a, int b)
+	{
+		int sum = 0;
+		for (int i = 0; i < b; i++)
+		{
+			sum += a;
+		}
+		return sum;
+	}
 
-
+    int RecUmmo(int a, int b)
+	{ 
 	return 0;
 }
