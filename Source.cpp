@@ -272,6 +272,16 @@ int Fak(int n)
 	}
 }
 */
+void More(int* num)
+{
+	*num += 2;
+}
+
+void More2(int& num)
+{
+	num += 2;
+}
+
 
 int main()
 {
@@ -359,7 +369,7 @@ int main()
 	//{
 	//	l++;
 	//}
-/*
+	/*
 	const int s = 5;
 	int ivan[s]{};
 
@@ -378,7 +388,7 @@ int main()
 	//std::cout << Sum(3, 4.4) << Sum(3.5, 3.7) << Sum("asd", "gdfsfdg") << Sum(true, false);
 	//std::cout << Sum(3, 4.4) << Sum("asd",234);
 	//std::cout << Fak(5);
-	int Ummo(int a, int b)
+	/*int Ummo(int a, int b)
 	{
 		int sum = 0;
 		for (int i = 0; i < b; i++)
@@ -388,7 +398,32 @@ int main()
 		return sum;
 	}
 
-    int RecUmmo(int a, int b)
-	{ 
-	return 0;
+	int RecUmmo(int a, int b)
+	{*/
+	/*int a = 10;
+	int* ptr = &a; это переменная которая может хранить адрес другой переменной
+	int* ptr;
+	ptr = &a;
+	/*int b = 100;
+	*ptr = b;
+
+	std::cout << a << "\n";
+	std::cout << &a << "\n";
+	std::cout << ptr << "\n";
+	std::cout << &ptr << "\n";
+	std::cout << *ptr * 2 << "\n";
+	More(ptr);
+	std::cout << a << "\n";
+	More2(a);
+	std::cout << a;
+	*/
+
+	int arr[5]{ 4,1,7,9,3 };
+	std::cout << arr[0] << "\n";
+	std::cout << *arr << "\n";
+	std::cout << *(arr + 3) << "\n";
+
+
+
+		return 0;
 }
