@@ -6,6 +6,10 @@
 #include <iomanip>
 #include <limits> // Для std::numeric_limits
 #include <Windows.h>
+#include <conio.h>
+#ifdef max
+#undef max
+#endif // max
 /*
    Типы данных
    bool             true/false    !0/0
@@ -282,6 +286,55 @@ void More2(int& num)
 	num += 2;
 }
 
+void Rkn(short* arr, int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		*(arr + i) = rand() % 6 + 2;
+	}
+
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << arr + i << "\t" << *(arr + i) << "\n";
+	}
+}
+
+void Push(int* &arr, int size, int num)
+{
+	int* temp = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		temp[i] = arr[i];
+	}
+
+
+	delete[]arr;
+	size++;
+	arr = new int[size];
+
+	for (int i = 0; i < size - 1; i++)
+	{
+		arr[i] = temp[i];
+	}
+	arr[size - 1] = num;
+
+	delete[]temp;
+}
+
+void Push(int* &arr, int size, int num)
+{
+	size++;
+	int* temp = new int[size];
+	for (int i = 0; i < size - 1; i++)
+	{
+		temp[i] = arr[i];
+	}
+	temp[size - 1] = num;
+
+	std::swap(temp, arr);
+
+	delete[]temp;
+}
 
 int main()
 {
@@ -417,12 +470,133 @@ int main()
 	More2(a);
 	std::cout << a;
 	*/
-
+	/*
 	int arr[5]{ 4,1,7,9,3 };
 	std::cout << arr[0] << "\n";
 	std::cout << *arr << "\n";
 	std::cout << *(arr + 3) << "\n";
+	*/
+	/*	const int size = 5;
+	short arr[size]{};
+	Rkn(arr, size);
+*/
+	/*int* a = new int;
+	*a = 100;
+	std::cout<< *a << "\n";
+
+	delete a;
+	*/
+	/*
+	std::cout << "Hello world\n";
+
+	short* asd = new short;
+
+	int size;
+	std::cin >> size;
+	asd = new short[size];
+
+	asd[0] = 13;
+
+	delete[]asd;
+	*/
+	/*
+	int size = 2;
+	int *dynArr = new int[size] {3, 7};
+	int number = 10;
+	
+	PrintArray(dynArr, size);
+	Push(dynArr, size, number);
+	PrintArray(dynArr, size);
+
+	delete[]dynArr;
+	*/
+	/*
+	int size = 2;
+	int* dynArr = new int[size] {3, 7};
+
+	delete[]dynArr;
+	*/
+	//int lol = 2, row = 3, col = 4;
+	//int** arr = new int* [row];
+	/*for (int i = 0; i < row; i++)
+	{
+		arr[i] = new int[col];
+	}
+	*/
+	/*
+	arr[0] = new int[3];
+	arr[1] = new int;
+	arr[2] = new int[1000];
+	*/
+	/*for (int i = 0; i < row; i++)
+	{
+		std::cin >> col;
+		arr[i] = new int[col];
+	}
+	*/
+	/*arr[2][3] = 100;
+
+	for (int i = 0; i < row; i++)
+	{
+		delete[]arr[i];
+	}
+	delete[]arr;
+	*/
+	/*
+	int*** ppz = new int** [lol];
+	for (int i = 0; i < lol; i++)
+	{
+		ppz[i] = new int* [row];
+		for (int j = 0; j < row; j++)
+		{
+			ppz[i][j] = new int[col];
+		}
+	}
+
+	ppz[0][2][3] = 1000;
+	for (int i = 0; i < lol; i++)
+	{
+		for (int j = 0; j < row; j++)
+		{
+			delete[]ppz[i][j];
+		}
+		delete[]ppz[i];
+	}
+	delete[]ppz;
+	*/
+	
+    int a = 10, b;
+	std::cout << "Hello world\n";
+	/*
+	const char word[14] = "Hello world\n";
+
+	std::cout << word;
+	*/
+	//std::cin >> a >> b;
+	//std::cout << a << ' ' << b << "\n\n";
 
 
+	std::string name; //test;
+	
+	name[3];
 
-		return 0;
+	std::getline(std::cin, name, '\n');
+	//std::cin >> name >> test;
+
+	//name += " " + test;
+
+	std::cout << name << '\n';
+
+	//std::cin >> b;
+	//std::cout << b << "\n";
+
+	//std::cin.ignore(32000, '\n');
+	//std::numeric_limits<std::streamsize()>::max();
+
+	std::getline(std::cin, name, '\n');
+	std::cout << name << '\n';
+
+	
+
+	return 0;
+}
